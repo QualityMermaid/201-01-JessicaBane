@@ -8,17 +8,193 @@
     <meta name="desctiption" content="This is my page about the 201 01 lession">
     <link rel="stylesheet" href="reset.css">
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;  /* add when doing styles to auto calcaluate sizes  */
+        }
+        body{
+            min-width: 320px;
+            font-size: 1rem; /* 1rem = 16px */
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.6; /* 1.6 good for paragraphs */
+            color: black;
+            background-color:  white;
+        }
+        li{
+            display: inline;
+            margin: 0 1rem; /* 0 = top and bottom 1 = left and right. add 4 values for all the way round or 1 for whole way around being the same */
+
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+        }
+        header{
+            background-color: rgb(190, 24, 52);
+        }
+        .header-container{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
         h1{
-            color: rgb(4, 152, 152);
+            color: rgb(200, 233, 14);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1rem;
+        }
+        a{
+            text-decoration: none;
+            margin: 0 1rem;
+            
+        }
+        a:hover{
+            color: black;
+            background-color: blueviolet;
+            
+        }
+        @media(min-width: 600px){
+            .header-container{
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+        }
+        .main-container{
+            background-color: black;
+        }
+        .par1{
+            color: rgb(0, 85, 255);
+        }
+        .par2{
+            color: rgb(242, 0, 255);
+        }
+        .par3{
+            color: rgb(0, 255, 4);
+        }
+        .par4{
+            color: rgb(255, 0, 0);
         }
     </style>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script>
-        console.log("I can confirm that this as been logged")
-    </script>
+    <header>
+        <div class="container header-container">
+            <h1>Class 1 Lab</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <script>
+            let user;
+        
+            alert("Hi, my name is Jessica, Welcome to my site!")
+
+            function userName(){
+                user = prompt("Please let me know how I can refer to you (eg. your Name)?")
+                alert("It's nice to meet you " + user)
+            }
+        userName();
+        </script>
+
+        <div class="main-container container">
+            <section>
+                <p class="par1">
+                    What is my fav colour?
+                    <script>
+                let colour;
+
+                        function favColour(){
+                                    
+                            while(colour != "blue"){
+                            colour = prompt(user + ", can you guess my fav colour?").toLowerCase()
+                                
+                            if (colour == "green"){
+                                alert("Almost " + user + " Green is my second fav colour. Try again for my fav!")
+                            } else if (colour != "blueas"){
+                                alert("Sorry " + user +" that's incorrect. Try again!")
+                            }
+                            else { alert("That's correct! Blue is my fav colour")}
+                                    }
+                                }
+                    </script>
+                    <button class="btn" onclick="favColour()"> Click me to Guess!</button>
+
+                </p>
+                <p class="par2">
+                    What is my cat called?
+                    <script>
+                        let catname;
+
+                        function myCatName(){
+                            console.log(catname)        
+                            while(catname != "bugsy"){
+                            catname = prompt(user + ", can you guess the name of my cat?").toLowerCase()
+                                
+                            if (catname != "bugsy"){
+                                alert("Sorry " + user +" that's incorrect.")
+                            } else { alert("That's correct. Bugsy says hello!")}
+                                    }
+                                }
+                    </script>
+                    <button class="btn" onclick="myCatName()"> Bugsy!</button>
+
+                </p>
+                <p class="par3">
+                    Where do I live?
+                    <script>
+                        let myloc;
+
+                        function myLocation(){
+                                    
+                            while(myloc != "cambridge"){
+                            myloc = prompt(user + ", can you guess where I live?").toLowerCase()
+                                
+                            if (myloc != "cambridge"){
+                                prompt("Sorry " + user +" that's incorrect")
+                            } else { alert("That's correct")}
+                                    }
+                                }
+                    </script>
+                    <button class="btn" onclick="myLocation()"> Click me to Guess Location!</button>
+
+                </p>
+                <p class="par4">
+                    What video game am I currently playing?
+                    <script>
+                        let game;
+
+                        function myGame(){
+                                    
+                            while(game != "zelda"){
+                            game = prompt(user + ", can you guess my current game?").toLowerCase()
+                                
+                            if (game != "zelda"){
+                                prompt("Sorry " + user +" that's incorrect. Try main game title eg. Zelda instead of Zelda: breath of the wild")
+                            } else { alert("That's correct")}
+                                    }
+                                }
+                    </script>
+                    <button class="btn" onclick="myGame()"> Click me!</button>
+
+                </p>
+            </section>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-container container">
+
+        </div>
+    </footer>
+    
 </body>
 </html>
