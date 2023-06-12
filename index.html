@@ -111,6 +111,7 @@
                     What is my fav colour?
                     <script>
                 let colour;
+                let colourDone = 0;
 
                         function favColour(){
                                     
@@ -119,20 +120,23 @@
                                 
                             if (colour == "green"){
                                 alert("Almost " + user + " Green is my second fav colour. Try again for my fav!")
-                            } else if (colour != "blueas"){
+                            } else if (colour != "blue"){
                                 alert("Sorry " + user +" that's incorrect. Try again!")
                             }
-                            else { alert("That's correct! Blue is my fav colour")}
-                                    }
+                            else { alert("That's correct! Blue is my fav colour"); colourDone = 1
+                                    }}
+                                    console.log(colourDone)
                                 }
                     </script>
                     <button class="btn" onclick="favColour()"> Click me to Guess!</button>
+            
 
                 </p>
                 <p class="par2">
                     What is my cat called?
                     <script>
                         let catname;
+                        let catDone = 0;
 
                         function myCatName(){
                             console.log(catname)        
@@ -141,7 +145,7 @@
                                 
                             if (catname != "bugsy"){
                                 alert("Sorry " + user +" that's incorrect.")
-                            } else { alert("That's correct. Bugsy says hello!")}
+                            } else { alert("That's correct. Bugsy says hello!"); catDone = 1}
                                     }
                                 }
                     </script>
@@ -152,6 +156,7 @@
                     Where do I live?
                     <script>
                         let myloc;
+                        let locDone = 0;
 
                         function myLocation(){
                                     
@@ -160,7 +165,7 @@
                                 
                             if (myloc != "cambridge"){
                                 prompt("Sorry " + user +" that's incorrect")
-                            } else { alert("That's correct")}
+                            } else { alert("That's correct."); locDone = 1}
                                     }
                                 }
                     </script>
@@ -171,6 +176,7 @@
                     What video game am I currently playing?
                     <script>
                         let game;
+                        let gameDone = 0;
 
                         function myGame(){
                                     
@@ -179,12 +185,27 @@
                                 
                             if (game != "zelda"){
                                 prompt("Sorry " + user +" that's incorrect. Try main game title eg. Zelda instead of Zelda: breath of the wild")
-                            } else { alert("That's correct")}
+                            } else { alert("That's correct"); gameDone = 1}
                                     }
                                 }
                     </script>
                     <button class="btn" onclick="myGame()"> Click me!</button>
 
+                </p>
+                <p>
+                    <script>
+                        let allDone = colourDone+catDone+locDone+gameDone
+                        function finished(){
+                            if(allDone <= 3) {
+                                alert("Sorry " + user + " you have not gotten it all right yet.")
+                            } else if (allDone == 4){
+                                alert("Congratulations!!!!!")
+                            } else return
+                            console.log(allDone)
+                        }
+
+                    </script>
+                    <button class="btn" onclick="finished()"> Finished Quiz</button>
                 </p>
             </section>
         </div>
