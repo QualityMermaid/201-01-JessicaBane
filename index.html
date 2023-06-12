@@ -21,10 +21,13 @@
             line-height: 1.6; /* 1.6 good for paragraphs */
             color: black;
             background-color:  white;
+            margin: 1rem;
         }
         li{
             display: inline;
             margin: 0 1rem; /* 0 = top and bottom 1 = left and right. add 4 values for all the way round or 1 for whole way around being the same */
+            border-radius: 6px;
+            background-color: rgb(174, 226, 43);
 
         }
         .container{
@@ -48,11 +51,13 @@
         a{
             text-decoration: none;
             margin: 0 1rem;
+            display: inline;
+            margin: 0 1rem; /* 0 = top and bottom 1 = left and right. add 4 values for all the way round or 1 for whole way around being the same */
+            border-radius: 6px;
             
         }
-        a:hover{
-            color: black;
-            background-color: blueviolet;
+        li:hover{
+            background-color: rgb(135, 195, 215);
             
         }
         @media(min-width: 600px){
@@ -64,6 +69,7 @@
         }
         .main-container{
             background-color: black;
+            
         }
         .par1{
             color: rgb(0, 85, 255);
@@ -76,6 +82,32 @@
         }
         .par4{
             color: rgb(255, 0, 0);
+        }
+        .btn{
+            border-radius: 4px;
+            background-color: rgb(9, 198, 236);
+            color: black;
+            border: 2px solid green;
+        }
+        .btn:hover{
+            background-color: black;
+            color: red;
+            border-radius: 4px;
+        }
+        h2{
+            color: teal;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+        .quiz{
+            color: hotpink;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            border: 3px solid hotpink;
+            padding: 10px;
+
         }
     </style>
 </head>
@@ -103,9 +135,36 @@
                 alert("It's nice to meet you " + user)
             }
         userName();
+        console.log(user)
         </script>
+        <section class="aboutMe">
+<h2>BIO</h2>
+Jessica Bane was born in 1989 in Cambridge where she has lived all her life apart from when she attended University in Falmouth, Cornwall.
+<br>
+She met her husband Nick at work (like so many people do) over 10 years ago! They have a son called Rowan who is 26 months old and a black cat called Bugsy.
 
+<h2>GOALS</h2>
+Jessica has a number of goals in her life that change constantly. She strives to be a fantastic rolemodel for her son!
+<br>
+To continually develop her understanding around all things tech! From the concept to deliver and beyond! <br>
+To one day hopefully soon have her own sewing room with an industrial sewing machine
+</li>
+<h2> EDUCATION & WORK</h2>
+Over 10 years in Engineering as a Quality/Test Engineer Jessica strives to keep Quality at the forfront of what she does. Leading by example mentoring and coaching where she can.
+<br>
+Jessica has a BA in Digital Animation and is a Master Scuba Diver.
+
+<h2>INTERESTING FACTS</h2>
+<p>
+    Jessica's husband knew her family before she met him! Infact her father (also called Nick) was head of R&D where Nick (husband going to get confusing) was his second! Her father told her on her first day of work not to date anyone they work with....... well 10+ years later they are married with a Son! 
+    <br>
+    Jessica spends her time swimming as a mermaid whenever she can in her blue and green tail. If you cannot find her under the water or with her family she will be playing games. At the moment she is playing though Zelda: Tears of the Kingdom.
+</p>
+</section>
         <div class="main-container container">
+            <p class="quiz">
+            Hope you have liked my page so far. Here is a little quiz on some of the things I have mentioned above.
+            </p>
             <section>
                 <p class="par1">
                     What is my fav colour?
@@ -127,6 +186,8 @@
                                     }}
                                     console.log(colourDone)
                                 }
+                                console.log("user guess", colour)
+                                console.log(colourDone)
                     </script>
                     <button class="btn" onclick="favColour()"> Click me to Guess!</button>
             
@@ -148,6 +209,8 @@
                             } else { alert("That's correct. Bugsy says hello!"); catDone = 1}
                                     }
                                 }
+                                console.log("user guess", catname)
+                                console.log(catDone)
                     </script>
                     <button class="btn" onclick="myCatName()"> Bugsy!</button>
 
@@ -168,6 +231,8 @@
                             } else { alert("That's correct."); locDone = 1}
                                     }
                                 }
+                                console.log("user guess", myloc)
+                                console.log(locDone)
                     </script>
                     <button class="btn" onclick="myLocation()"> Click me to Guess Location!</button>
 
@@ -187,6 +252,8 @@
                                 prompt("Sorry " + user +" that's incorrect. Try main game title eg. Zelda instead of Zelda: breath of the wild")
                             } else { alert("That's correct"); gameDone = 1}
                                     }
+                                    console.log("user guess", game)
+                                    console.log(gameDone)
                                 }
                     </script>
                     <button class="btn" onclick="myGame()"> Click me!</button>
@@ -201,7 +268,7 @@
                             } else if (allDone == 4){
                                 alert("Congratulations!!!!!")
                             } else return
-                            console.log(allDone)
+                            console.log("Are all quizes correct?", allDone)
                         }
 
                     </script>
