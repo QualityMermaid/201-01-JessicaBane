@@ -168,7 +168,27 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
             <section>
                 <p class="par1">
                     What is my fav colour?
+                    <button class="btn" onclick="favColour()"> Pick a Colour!</button>
+                </p>
+                <p class="par2">
+                    What is my cat called?
+                    <button class="btn" onclick="myCatName()"> Click here to make a guess!</button>
+                </p>
+                <p class="par3">
+                    Where do I live?
+                    <button class="btn" onclick="myLocation()"> Give it a go!</button>
+
+                </p>
+                <p class="par4">
+                    What video game am I currently playing?
+                    <button class="btn" onclick="myGame()"> Hey! Listen!</button>
+                    
+                </p>
+                <p>
+                    <button class="btn" onclick="finished()"> Finished Quiz</button>
+                </p>
                     <script>
+                        
                 let colour;
                 let colourDone = 0;
 
@@ -188,14 +208,8 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
                                 }
                                 console.log("user guess", colour)
                                 console.log(colourDone)
-                    </script>
-                    <button class="btn" onclick="favColour()"> Pick a Colour!</button>
             
-
-                </p>
-                <p class="par2">
-                    What is my cat called?
-                    <script>
+                
                         let catname;
                         let catDone = 0;
 
@@ -211,13 +225,9 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
                                 }
                                 console.log("user guess", catname)
                                 console.log(catDone)
-                    </script>
-                    <button class="btn" onclick="myCatName()"> Click here to make a guess!</button>
+                    
 
-                </p>
-                <p class="par3">
-                    Where do I live?
-                    <script>
+                
                         let myloc;
                         let locDone = 0;
 
@@ -233,13 +243,8 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
                                 }
                                 console.log("user guess", myloc)
                                 console.log(locDone)
-                    </script>
-                    <button class="btn" onclick="myLocation()"> Give it a go!</button>
-
-                </p>
-                <p class="par4">
-                    What video game am I currently playing?
-                    <script>
+                    
+                
                         let game;
                         let gameDone = 0;
 
@@ -255,14 +260,13 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
                                     console.log("user guess", game)
                                     console.log(gameDone)
                                 }
-                    </script>
-                    <button class="btn" onclick="myGame()"> Hey! Listen!</button>
 
-                </p>
-                <p>
-                    <script>
-                        let allDone = colourDone+catDone+locDone+gameDone
+                        // let allDone = colourDone+catDone+locDone+gameDone
+                        // console.log(allDone)
+
                         function finished(){
+                            let allDone = colourDone+catDone+locDone+gameDone
+                        console.log(allDone)
                             if(allDone <= 3) {
                                 alert("Sorry " + user + " you have not gotten it all right yet.")
                             } else if (allDone == 4){
@@ -272,8 +276,7 @@ Jessica has a BA in Digital Animation and is a Master Scuba Diver.
                         }
 
                     </script>
-                    <button class="btn" onclick="finished()"> Finished Quiz</button>
-                </p>
+                    
             </section>
         </div>
 
